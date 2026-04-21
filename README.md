@@ -67,4 +67,86 @@ public class Main {
         c1.show();
         c2.show();
     }
+*****************
+Date:20.04.2026
+Day#02
+Topic:Encapsulation
+Video Link:https://youtu.be/lWFzm8qIR1c?si=F4xqcZjL5OdrfHzZ
+*******************
+Example:
+*************************
+class Student {
+
+    
+    private String name;
+    private int age;
+
+ 
+    public void setName(String n) {
+        name = n;
+    }
+
+    public void setAge(int a) {
+        age = a;
+    }
+
+    
+    public String getName() {
+        return name;
+    }
+
+    public int getAge() {
+        return age;
+    }
+}
+
+public class Main {
+    public static void main(String[] args) {
+
+        Student s = new Student();
+
+      
+
+      
+        s.setName("Mou");
+        s.setAge(21);
+
+      
+        System.out.println("Name: " + s.getName());
+        System.out.println("Age: " + s.getAge());
+    }
+}
+
+
+
+}
+Date:21.04.2026
+Day#03
+Topic:Constructor
+Video Link:https://youtu.be/lWFzm8qIR1c?si=F4xqcZjL5OdrfHzZ
+*******************
+Example:
+*************************
+class Student {
+
+    String name;
+    int age;
+
+   
+    Student() {
+        name = "Mou";
+        age = 21;
+    }
+
+    void show() {
+        System.out.println(name + " " + age);
+    }
+}
+
+public class Main {
+    public static void main(String[] args) {
+
+        Student s = new Student();
+        s.show();
+    }
 }
