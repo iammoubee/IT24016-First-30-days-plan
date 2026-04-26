@@ -150,3 +150,118 @@ public class Main {
         s.show();
     }
 }
+Date:22.04.2026
+Day#04
+Topic:inheritance
+Video Link:https://youtu.be/lWFzm8qIR1c?si=F4xqcZjL5OdrfHzZ
+*******************
+Example
+********************
+class Animal {
+    void sound() {
+        System.out.println("Animal makes sound");
+    }
+}
+
+class Dog extends Animal {
+    void bark() {
+        System.out.println("Dog barks");
+    }
+}
+
+public class Main {
+    public static void main(String[] args) {
+        Dog d = new Dog();
+        d.sound(); // from Animal
+        d.bark();  // from Dog
+    }
+}
+Date:23.04.2026
+Day#05
+Topic:Polymorphism
+Video Link:https://youtu.be/lWFzm8qIR1c?si=F4xqcZjL5OdrfHzZ
+*******************
+Example
+********************
+class Animal {
+    void sound() {
+        System.out.println("Animal sound");
+    }
+}
+
+class Cat extends Animal {
+    void sound() {
+        System.out.println("Cat meows");
+    }
+}
+
+class Dog extends Animal {
+    void sound() {
+        System.out.println("Dog barks");
+    }
+}
+
+public class Main {
+    public static void main(String[] args) {
+        Animal a;
+
+        a = new Cat();
+        a.sound();
+
+        a = new Dog();
+        a.sound();
+    }
+}
+Date:24.04.2026
+Day#06
+Topic:Abstraction
+Video Link:https://youtu.be/lWFzm8qIR1c?si=F4xqcZjL5OdrfHzZ
+*******************
+Example
+********************
+abstract class Animal {
+    abstract void sound(); // no body
+
+    void sleep() {
+        System.out.println("Animal sleeps");
+    }
+}
+
+class Dog extends Animal {
+    void sound() {
+        System.out.println("Dog barks");
+    }
+}
+
+public class Main {
+    public static void main(String[] args) {
+        Animal a = new Dog();
+        a.sound();
+        a.sleep();
+    }
+}
+Date:25.04.2026
+Day#07
+Topic:Inner class in java
+Video Link:https://youtu.be/lWFzm8qIR1c?si=F4xqcZjL5OdrfHzZ
+*******************
+Example
+********************
+class Outer {
+    int x = 10;
+
+    class Inner {
+        void show() {
+            System.out.println("Inner class: x = " + x);
+        }
+    }
+}
+
+public class Main {
+    public static void main(String[] args) {
+        Outer obj = new Outer();
+        Outer.Inner in = obj.new Inner(); // create inner object
+        in.show();
+    }
+}
+
