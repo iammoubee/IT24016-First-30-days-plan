@@ -264,4 +264,180 @@ public class Main {
         in.show();
     }
 }
+Date:26.04.2026
+Day#08
+Topic:collection framework for java
+Video Link:https://youtu.be/lWFzm8qIR1c?si=F4xqcZjL5OdrfHz
+*******************
+Example
+********************
+public import java.util.*;
+
+public class Main {
+    public static void main(String[] args) {
+
+    
+        System.out.println("=== LIST ===");
+        List<String> list = new ArrayList<>();
+        list.add("Apple");
+        list.add("Banana");
+        list.add("Mango");
+
+        System.out.println("List: " + list);
+        System.out.println("First element: " + list.get(0));
+
+        for(String item : list){
+            System.out.println(item);
+        }
+
+
+        
+        System.out.println("\n=== QUEUE ===");
+        Queue<String> queue = new LinkedList<>();
+        queue.add("A");
+        queue.add("B");
+        queue.add("C");
+
+        System.out.println("Queue: " + queue);
+
+        queue.poll(); 
+        System.out.println("After poll: " + queue);
+
+        System.out.println("Front element: " + queue.peek());
+
+
+        
+        System.out.println("\n=== HASHMAP ===");
+        Map<Integer, String> map = new HashMap<>();
+        map.put(1, "Rahim");
+        map.put(2, "Karim");
+        map.put(3, "Sadia");
+
+        System.out.println("Map: " + map);
+        System.out.println("Value of key 1: " + map.get(1));
+
+        for(Map.Entry<Integer, String> entry : map.entrySet()){
+            System.out.println(entry.getKey() + " -> " + entry.getValue());
+        }
+
+
+    
+        System.out.println("\n=== EXTRA ===");
+        System.out.println("List contains Mango? " + list.contains("Mango"));
+        list.remove("Banana");
+        System.out.println("Updated List: " + list);
+        System.out.println("List size: " + list.size());
+    }
+}
+ {
+    
+}
+Date:27.04.2026
+Day#09
+Topic:collection framework for java
+Video Link:https://youtu.be/lWFzm8qIR1c?si=F4xqcZjL5OdrfHzZ
+*******************
+Example
+********************
+import java.util.*;
+
+public class Main {
+    public static void main(String[] args) {
+
+        
+        ArrayList<String> list = new ArrayList<>();
+        list.add("Apple");
+        list.add("Banana");
+
+        System.out.println("List: " + list);
+
+
+        
+        Queue<String> queue = new LinkedList<>();
+        queue.add("A");
+        queue.add("B");
+
+        queue.poll(); 
+
+        System.out.println("Queue: " + queue);
+
+
+
+        HashMap<Integer, String> map = new HashMap<>();
+        map.put(1, "Rahim");
+        map.put(2, "Karim");
+
+        System.out.println("Map: " + map);
+
+
+        
+        for (String item : list) {
+            System.out.println(item);
+        }
+    }
+}
+Date:28.04.2026
+Day#10
+Topic:list in java
+Video Link:https://youtu.be/lWFzm8qIR1c?si=F4xqcZjL5OdrfHzZ
+*******************
+Example
+********************
+import java.util.*;
+
+public class Main {
+    public static void main(String[] args) {
+
+        List<String> list = new ArrayList<>();
+
+        list.add("Apple");
+        list.add("Banana");
+
+        System.out.println("List: " + list);
+    }
+}
+Date:30.04.2026
+Day#11
+Topic:array list in java
+Video Link:https://youtu.be/lWFzm8qIR1c?si=F4xqcZjL5OdrfHzZ
+*******************
+Example
+********************
+import java.util.*;
+
+public class Main {
+    public static void main(String[] args) {
+
+        ArrayList<String> arr = new ArrayList<>();
+
+        arr.add("Cat");
+        arr.add("Dog");
+
+        System.out.println("ArrayList: " + arr);
+    }
+}
+Date:01.04.2026
+Day#12
+Topic:linked list in java
+Video Link:https://youtu.be/lWFzm8qIR1c?si=F4xqcZjL5OdrfHzZ
+*******************
+Example
+********************
+import java.util.*;
+
+public class Main {
+    public static void main(String[] args) {
+
+        LinkedList<String> list = new LinkedList<>();
+
+        list.add("Red");
+        list.add("Blue");
+
+        System.out.println("LinkedList: " + list);
+    }
+}
+
+
+
+
 
