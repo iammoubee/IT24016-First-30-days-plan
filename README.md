@@ -436,8 +436,146 @@ public class Main {
         System.out.println("LinkedList: " + list);
     }
 }
+Date:9.05.2026
+Day#13
+Topic:Abstruct Class
+Video Link:https://youtu.be/lWFzm8qIR1c?si=F4xqcZjL5OdrfHzZ
+*******************
+Example
+********************
+import java.util.Scanner;
 
+abstract class Shape {
+    abstract void area();
+    abstract void perimeter();
+}
 
+class Circle extends Shape {
+    double radius;
+
+    Circle(double radius) {
+        this.radius = radius;
+    }
+
+    void area() {
+        System.out.println("Circle Area = " + (3.14 * radius * radius));
+    }
+
+    void perimeter() {
+        System.out.println("Circle Perimeter = " + (2 * 3.14 * radius));
+    }
+}
+
+class Triangle extends Shape {
+    double side1, side2, side3, base, height;
+
+    Triangle(double side1, double side2, double side3, double base, double height) {
+        this.side1 = side1;
+        this.side2 = side2;
+        this.side3 = side3;
+        this.base = base;
+        this.height = height;
+    }
+
+    void area() {
+        System.out.println("Triangle Area = " + (0.5 * base * height));
+    }
+
+    void perimeter() {
+        System.out.println("Triangle Perimeter = " + (side1 + side2 + side3));
+    }
+}
+
+class Rectangle extends Shape {
+    double length, width;
+
+    Rectangle(double length, double width) {
+        this.length = length;
+        this.width = width;
+    }
+
+    void area() {
+        System.out.println("Rectangle Area = " + (length * width));
+    }
+
+    void perimeter() {
+        System.out.println("Rectangle Perimeter = " + (2 * (length + width)));
+    }
+}
+
+class Trapezium extends Shape {
+    double side1, side2, side3, side4, height;
+
+    Trapezium(double side1, double side2, double side3, double side4, double height) {
+        this.side1 = side1;
+        this.side2 = side2;
+        this.side3 = side3;
+        this.side4 = side4;
+        this.height = height;
+    }
+
+    void area() {
+        System.out.println("Trapezium Area = " + (0.5 * (side1 + side2) * height));
+    }
+
+    void perimeter() {
+        System.out.println("Trapezium Perimeter = " + (side1 + side2 + side3 + side4));
+    }
+}
+
+public class Main {
+    public static void main(String[] args) {
+
+        Scanner input = new Scanner(System.in);
+
+        System.out.print("Enter radius: ");
+        double radius = input.nextDouble();
+
+        System.out.print("Enter triangle sides and height: ");
+        double a = input.nextDouble();
+        double b = input.nextDouble();
+        double c = input.nextDouble();
+        double h = input.nextDouble();
+
+        System.out.print("Enter rectangle length and width: ");
+        double length = input.nextDouble();
+        double width = input.nextDouble();
+
+        System.out.print("Enter trapezium sides and height: ");
+        double t1 = input.nextDouble();
+        double t2 = input.nextDouble();
+        double t3 = input.nextDouble();
+        double t4 = input.nextDouble();
+        double th = input.nextDouble();
+
+        Shape circle = new Circle(radius);
+        Shape triangle = new Triangle(a, b, c, b, h);
+        Shape rectangle = new Rectangle(length, width);
+        Shape trapezium = new Trapezium(t1, t2, t3, t4, th);
+
+        System.out.println("\n----- RESULTS -----");
+
+        circle.area();
+        circle.perimeter();
+
+        System.out.println();
+
+        triangle.area();
+        triangle.perimeter();
+
+        System.out.println();
+
+        rectangle.area();
+        rectangle.perimeter();
+
+        System.out.println();
+
+        trapezium.area();
+        trapezium.perimeter();
+
+        input.close();
+    }
+}
 
 
 
