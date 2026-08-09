@@ -572,6 +572,325 @@ public class Main {
 
         trapezium.area();
         trapezium.perimeter();
+        ================================================================================
+DAY 13: QUEUES IN JAVA
+=============================================================================
+Day: 14
+Topic: Queues in Java
+Video Link: https://www.youtube.com/watch?v=Hk5VlG6OgPI
+
+CODE:
+================================================================================
+import java.util.LinkedList;
+import java.util.Queue;
+
+public class QueueExample {
+    public static void main(String[] args) {
+        Queue<String> queue = new LinkedList<>();
+        
+        queue.add("First");
+        queue.add("Second");
+        queue.add("Third");
+        
+        System.out.println("Queue: " + queue);
+        System.out.println("Removed: " + queue.poll());
+        System.out.println("After removal: " + queue);
+        System.out.println("First element: " + queue.peek());
+    }
+}
+================================================================================
+
+================================================================================
+DAY 14: USING MAP
+===========================================================================
+Day:15
+Topic: Using Map Interface in Java
+Video Link: https://www.youtube.com/watch?v=6jqMMHlA6G4
+
+CODE:
+================================================================================
+import java.util.HashMap;
+import java.util.Map;
+
+public class MapExample {
+    public static void main(String[] args) {
+        Map<Integer, String> map = new HashMap<>();
+        
+        map.put(101, "John");
+        map.put(102, "Emma");
+        map.put(103, "Michael");
+        
+        System.out.println("Map: " + map);
+        System.out.println("Get ID 102: " + map.get(102));
+        System.out.println("Contains key 103? " + map.containsKey(103));
+        map.remove(103);
+        System.out.println("After removal: " + map);
+    }
+}
+================================================================================
+
+================================================================================
+DAY 15: HASHMAP & COLLECTIONS REAL WORLD
+================================================================================
+
+Day:16
+Topic: HashMap and Collections Real World Scenario
+Video Link: https://www.youtube.com/watch?v=2v0eE4m5KVY
+
+CODE:
+================================================================================
+import java.util.*;
+
+public class ShoppingCart {
+    public static void main(String[] args) {
+        HashMap<String, Double> products = new HashMap<>();
+        products.put("Laptop", 899.99);
+        products.put("Mouse", 29.99);
+        products.put("Keyboard", 49.99);
+        
+        ArrayList<String> cart = new ArrayList<>();
+        cart.add("Laptop");
+        cart.add("Mouse");
+        
+        System.out.println("Products: " + products);
+        System.out.println("Cart: " + cart);
+        
+        double total = products.get("Laptop") + products.get("Mouse");
+        System.out.println("Total: $" + total);
+    }
+}
+================================================================================
+
+================================================================================
+DAY 16: JAVA FILE HANDLING
+================================================================================
+
+Day: 17
+Topic: Java File Handling
+Video Link: https://www.youtube.com/watch?v=4RjH0AD-EhA
+
+CODE:
+================================================================================
+import java.io.File;
+import java.io.IOException;
+
+public class FileHandling {
+    public static void main(String[] args) throws IOException {
+        File file = new File("test.txt");
+        
+        if (file.createNewFile()) {
+            System.out.println("File created: " + file.getName());
+        }
+        
+        System.out.println("Path: " + file.getAbsolutePath());
+        System.out.println("Size: " + file.length() + " bytes");
+        System.out.println("Exists: " + file.exists());
+    }
+}
+================================================================================
+
+================================================================================
+DAY 17: BYTE STREAM
+================================================================================
+Day: 18
+Topic: Using Byte Stream in Java
+Video Link: https://www.youtube.com/watch?v=JKLjIEg78lE
+
+CODE:
+================================================================================
+import java.io.*;
+
+public class ByteStream {
+    public static void main(String[] args) throws IOException {
+        // Write
+        FileOutputStream fos = new FileOutputStream("byte.txt");
+        fos.write("Hello Java".getBytes());
+        fos.close();
+        
+        // Read
+        FileInputStream fis = new FileInputStream("byte.txt");
+        int data;
+        while ((data = fis.read()) != -1) {
+            System.out.print((char) data);
+        }
+        fis.close();
+    }
+}
+================================================================================
+
+================================================================================
+DAY 18: MANAGING DIRECTORIES
+================================================================================
+Day:19
+Topic: Managing Directories in Java
+Video Link: https://www.youtube.com/watch?v=qSm3_3XY0_c
+
+CODE:
+================================================================================
+import java.io.File;
+
+public class Directories {
+    public static void main(String[] args) {
+        File dir = new File("MyFolder");
+        
+        if (dir.mkdir()) {
+            System.out.println("Directory created: " + dir.getName());
+        }
+        
+        File nested = new File("MyFolder/SubFolder");
+        nested.mkdirs();
+        System.out.println("Nested directories created");
+        
+        System.out.println("Is directory? " + dir.isDirectory());
+        dir.delete();
+        System.out.println("Directory deleted");
+    }
+}
+================================================================================
+
+================================================================================
+DAY 19: DATE AND TIME CLASS
+================================================================================
+Day: 20
+Topic: Java Date and Time Class
+Video Link: https://www.youtube.com/watch?v=4nVbsujz5lc
+
+CODE:
+================================================================================
+import java.time.LocalDate;
+import java.time.LocalTime;
+import java.time.LocalDateTime;
+
+public class DateTime {
+    public static void main(String[] args) {
+        LocalDate date = LocalDate.now();
+        LocalTime time = LocalTime.now();
+        LocalDateTime dt = LocalDateTime.now();
+        
+        System.out.println("Date: " + date);
+        System.out.println("Time: " + time);
+        System.out.println("DateTime: " + dt);
+        System.out.println("Tomorrow: " + date.plusDays(1));
+        System.out.println("Year: " + date.getYear());
+    }
+}
+================================================================================
+
+================================================================================
+DAY 20: FORMATTING DATE
+===============================================================================
+Day:21
+Topic: Formatting Date in Java
+Video Link: https://www.youtube.com/watch?v=7-jJY-6n90c
+
+CODE:
+================================================================================
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
+
+public class DateFormat {
+    public static void main(String[] args) {
+        LocalDateTime now = LocalDateTime.now();
+        
+        DateTimeFormatter f1 = DateTimeFormatter.ofPattern("dd/MM/yyyy");
+        DateTimeFormatter f2 = DateTimeFormatter.ofPattern("dd-MMM-yyyy");
+        DateTimeFormatter f3 = DateTimeFormatter.ofPattern("HH:mm:ss");
+        
+        System.out.println("Format 1: " + now.format(f1));
+        System.out.println("Format 2: " + now.format(f2));
+        System.out.println("Format 3: " + now.format(f3));
+    }
+}
+================================================================================
+
+================================================================================
+DAY 21: TIME ZONE
+================================================================================
+Day:22
+Topic: Time Zone in Java
+Video Link: https://www.youtube.com/watch?v=L7ZKSFm4V8I
+
+CODE:
+================================================================================
+import java.time.ZonedDateTime;
+import java.time.ZoneId;
+
+public class TimeZone {
+    public static void main(String[] args) {
+        ZonedDateTime ny = ZonedDateTime.now(ZoneId.of("America/New_York"));
+        ZonedDateTime london = ZonedDateTime.now(ZoneId.of("Europe/London"));
+        ZonedDateTime tokyo = ZonedDateTime.now(ZoneId.of("Asia/Tokyo"));
+        
+        System.out.println("New York: " + ny);
+        System.out.println("London: " + london);
+        System.out.println("Tokyo: " + tokyo);
+    }
+}
+================================================================================
+
+================================================================================
+DAY 22: PARSING DATA FROM STRING
+===============================================================================
+Day: 23
+Topic: Parsing Data from String
+Video Link: https://www.youtube.com/watch?v=2zZGR7cV3F8
+
+CODE:
+================================================================================
+import java.time.LocalDate;
+
+public class StringParsing {
+    public static void main(String[] args) {
+        // Parse numbers
+        int num = Integer.parseInt("100");
+        double dbl = Double.parseDouble("45.67");
+        System.out.println("Number: " + num);
+        System.out.println("Double: " + dbl);
+        
+        // Parse date
+        LocalDate date = LocalDate.parse("2026-08-09");
+        System.out.println("Date: " + date);
+        
+        // Split string
+        String data = "John,25,Engineer";
+        String[] parts = data.split(",");
+        System.out.println("Name: " + parts[0]);
+        System.out.println("Age: " + parts[1]);
+        System.out.println("Job: " + parts[2]);
+    }
+}
+================================================================================
+
+================================================================================
+DAY 23: FILE INPUT OUTPUT
+================================================================================
+Day:24
+Topic: File Input Output in Java
+Video Link: https://www.youtube.com/watch?v=wU6uj5hP2H0
+
+CODE:
+================================================================================
+import java.io.*;
+
+public class FileIO {
+    public static void main(String[] args) throws IOException {
+        // Write to file
+        FileWriter writer = new FileWriter("data.txt");
+        writer.write("Hello World!\n");
+        writer.write("Java Programming");
+        writer.close();
+        System.out.println("File written");
+        
+        // Read from file
+        BufferedReader reader = new BufferedReader(new FileReader("data.txt"));
+        String line;
+        while ((line = reader.readLine()) != null) {
+            System.out.println("Read: " + line);
+        }
+        reader.close();
+    }
+}
+================================================================================
 
         input.close();
     }
